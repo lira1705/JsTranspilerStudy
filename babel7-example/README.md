@@ -2,35 +2,27 @@
 
 ## What needs to be updated 
 
-* Use babel.config.js to centralize configurations of your packages.
-* All of those packages below are deprecated and it's necessary to change the 'preset' for 'preset-env'
+1. Use babel.config.js to centralize configurations of your packages;
+2. All of those packages below are deprecated and it's necessary to change the 'preset' for 'preset-env';
   * babel-preset-es2015
   * babel-preset-es2016
   * babel-preset-es2017
   * babel-preset-latest
+3. Remove @babel/polyfill and substitute it with core-js;  
+4. Remove the 'preset-' and 'plugin-' from the pakages in .babelrc;
+5. Change all babel packages names in package.json and babel config files;
+ * babel-core -> @babel/core
+ * babel-cli -> @babel/cli
+ * env -> "@babel/env"
+6. Switch the transform for the proposal in plugins that aren't yearly releases;
+ * @babel/plugin-transform-function-bind -> @babel/plugin-proposal-function-bind
+7. Remove the year from packages;  
+ * @babel/plugin-transform-es2015-classes -> @babel/plugin-transform-classes  
+8. Turn the presets in a list;  
+ * "presets": "@babel/preset-env, @babel/preset-react" -> "presets": ["@babel/preset-env", "@babel/preset-react"]  
+9. Scripts should be aware that the path should be relative to the babel config file;
+10. Add @babel/runtime-corejs2 if @babel/runtime was used;
+11. Change the transform-runtime for the @babel/plugin-transform-runtime;  
+12. Update @babel/plugin-transform-export-extensions to @babel/plugin-proposal-export-default-from and @babel/plugin-proposal-export-namespace-from;
 
-### Remove @babel/polyfill and substitute it with core-js  
-
-### Remove the 'preset-' and 'plugin-' from the pakages in .babelrc
-
-### Change all babel packages names in package.json and babel config files
-Ex: babel-core -> @babel/core, babel-cli -> @babel/cli, env -> "@babel/env"
-
-### Switch the transform for the proposal in plugins that aren't yearly releases
-Ex: @babel/plugin-transform-function-bind -> @babel/plugin-proposal-function-bind
-
-### Remove the year from packages  
-Ex: @babel/plugin-transform-es2015-classes -> @babel/plugin-transform-classes  
-
-## Turn the presets in a list  
-Ex: "presets": "@babel/preset-env, @babel/preset-react" -> "presets": ["@babel/preset-env", "@babel/preset-react"]  
-
-## Scripts should be aware that the path should be relative to the babel config file
-
-## Add @babel/runtime-corejs2 if @babel/runtime was used
-
-## Change the transform-runtime for the @babel/plugin-transform-runtime  
-
-## Update @babel/plugin-transform-export-extensions to @babel/plugin-proposal-export-default-from and @babel/plugin-proposal-export-namespace-from
-
-## For each topic consult the official docs: https://babeljs.io/docs/en/v7-migration
+## For each topic and more informations consult the official docs: https://babeljs.io/docs/en/v7-migration
