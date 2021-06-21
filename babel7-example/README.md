@@ -1,26 +1,25 @@
-#Updating to Babel 7
+# Updating to Babel 7
 
-## Babel version 7 brings the babel.config.js to centralize configurations of all or only on package.
+## What needs to be updated 
 
-## All of those packages below are deprecated
-babel-preset-es2015
-babel-preset-es2016
-babel-preset-es2017
-babel-preset-latest
+* Use babel.config.js to centralize configurations of your packages.
+* All of those packages below are deprecated and it's necessary to change the 'preset' for 'preset-env'
+** babel-preset-es2015
+** babel-preset-es2016
+** babel-preset-es2017
+** babel-preset-latest
 
-## Change the "preset" for "preset-env".
+### Remove @babel/polyfill and substitute it with core-js  
 
-## Remove @babel/polyfill and substitute it with core-js  
+### Remove the 'preset-' and 'plugin-' from the pakages in .babelrc
 
-## Remove the 'preset-' and 'plugin-' from the pakages in .babelrc
-
-## Change all babel packages names in package.json and babel config files
+### Change all babel packages names in package.json and babel config files
 Ex: babel-core -> @babel/core, babel-cli -> @babel/cli, env -> "@babel/env"
 
-## Switch the transform for the proposal in plugins that aren't yearly releases
+### Switch the transform for the proposal in plugins that aren't yearly releases
 Ex: @babel/plugin-transform-function-bind -> @babel/plugin-proposal-function-bind
 
-## Remove the year from packages  
+### Remove the year from packages  
 Ex: @babel/plugin-transform-es2015-classes -> @babel/plugin-transform-classes  
 
 ## Turn the presets in a list  
