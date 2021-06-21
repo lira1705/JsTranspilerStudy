@@ -4,10 +4,10 @@
 
 * Use babel.config.js to centralize configurations of your packages.
 * All of those packages below are deprecated and it's necessary to change the 'preset' for 'preset-env'
-** babel-preset-es2015
-** babel-preset-es2016
-** babel-preset-es2017
-** babel-preset-latest
+  * babel-preset-es2015
+  * babel-preset-es2016
+  * babel-preset-es2017
+  * babel-preset-latest
 
 ### Remove @babel/polyfill and substitute it with core-js  
 
