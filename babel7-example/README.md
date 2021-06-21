@@ -5,19 +5,19 @@
 ### Change Package/Plugins/Presets for updated versions
 
 1. It's necessary to change the 'preset' for 'preset-env' on the packages below;
-  * babel-preset-es2015
-  * babel-preset-es2016
-  * babel-preset-es2017
-  * babel-preset-latest
+* babel-preset-es2015
+* babel-preset-es2016
+* babel-preset-es2017
+* babel-preset-latest
 2. Remove the 'preset-' and 'plugin-' from the pakages in .babelrc;
 3. Switch the transform for the proposal in plugins that aren't yearly releases;
   * @babel/plugin-transform-function-bind -> @babel/plugin-proposal-function-bind
 4. Change all babel packages names in package.json and babel config files;
-  * babel-core -> @babel/core
-  * babel-cli -> @babel/cli
-  * env -> "@babel/env"
+* babel-core -> @babel/core
+* babel-cli -> @babel/cli
+* env -> "@babel/env"
 5. Remove the year from packages;  
-  * @babel/plugin-transform-es2015-classes -> @babel/plugin-transform-classes  
+* @babel/plugin-transform-es2015-classes -> @babel/plugin-transform-classes  
 6. Change the transform-runtime for the @babel/plugin-transform-runtime;  
 
 ### Add/remove packages
@@ -29,7 +29,7 @@
 ### More adjustments
 1. Use babel.config.js to centralize configurations of your packages;
 2. Turn the presets in a list;  
- * "presets": "@babel/preset-env, @babel/preset-react" -> "presets": ["@babel/preset-env", "@babel/preset-react"]  
-3. Scripts should be aware that the path should be relative to the babel config file;
+* "presets": "@babel/preset-env, @babel/preset-react" -> "presets": ["@babel/preset-env", "@babel/preset-react"]  
+4. Scripts should be aware that the path should be relative to the babel config file;
 
 #### For each topic and more informations consult the official docs: https://babeljs.io/docs/en/v7-migration
